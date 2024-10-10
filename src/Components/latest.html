@@ -1,0 +1,77 @@
+<!-- <html>
+<head>
+    <title>Job Openings</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const JobCard = ({ company, position, salary, location, time, views }) => (
+            <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <div className="flex justify-between items-center">
+                    <div>
+                        <h3 className="text-lg font-semibold">{company}</h3>
+                        <p className="text-sm font-bold text-white">{position}</p>
+                        <p className="text-sm text-blue-500">{salary}</p>
+                        <p className="text-sm text-gray-400">{location}</p>
+                    </div>
+                    <div>
+                        <i className="fas fa-mountain text-4xl text-purple-600"></i>
+                    </div>
+                </div>
+                <div className="flex justify-between items-center mt-4 text-gray-400 text-sm">
+                    <p>{time}</p>
+                    <p>{views} views</p>
+                </div>
+            </div>
+        );
+
+        const App = () => {
+            const [jobs, setJobs] = useState([]);
+
+            useEffect(() => {
+                fetch('https://api.example.com/jobs') // Replace with your actual API endpoint
+                    .then(response => response.json())
+                    .then(data => setJobs(data))
+                    .catch(error => console.error('Error fetching jobs:', error));
+            }, []);
+
+            return (
+                <div className="container mx-auto p-8">
+                    <h1 className="text-3xl font-bold text-center text-purple-600 mb-8">
+                        Latest And Top <span className="text-white">Job Openings</span>
+                    </h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {jobs.map((job, index) => (
+                            <JobCard 
+                                key={index}
+                                company={job.company} 
+                                position={job.position} 
+                                salary={job.salary} 
+                                location={job.location} 
+                                time={job.time} 
+                                views={job.views} 
+                            />
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html> -->

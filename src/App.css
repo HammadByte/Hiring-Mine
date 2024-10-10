@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: rgb(17 24 39);
+}
+.popular-searches button {
+    background-color: #2e2e4d;
+    border: 1px solid #4a90e2;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.popular-searches button:hover {
+    background-color: #4a90e2;
+}
